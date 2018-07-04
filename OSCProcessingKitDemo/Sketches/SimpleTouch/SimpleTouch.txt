@@ -1,6 +1,5 @@
 // SimpleTouch - ProcessingKit
 
-import UIKit
 import ProcessingKit
 
 class SimpleTouch: ProcessingView {

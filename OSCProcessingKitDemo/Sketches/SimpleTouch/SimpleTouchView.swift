@@ -6,7 +6,6 @@
 //  Copyright © 2018年 Atsuya Sato. All rights reserved.
 //
 
-import UIKit
 import ProcessingKit
 
 class SimpleTouch: ProcessingView {
