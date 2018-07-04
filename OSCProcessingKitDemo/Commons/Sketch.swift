@@ -13,6 +13,7 @@ enum Sketch: EnumCollection {
     case colorful
     case simpleTouch
     case ripple
+    case particle
 
     var name: String {
         switch self {
@@ -22,6 +23,8 @@ enum Sketch: EnumCollection {
             return "SimpleTouch"
         case .ripple:
             return "Ripple"
+        case .particle:
+            return "Particle"
         }
     }
 
@@ -33,6 +36,8 @@ enum Sketch: EnumCollection {
             return "SimpleTouch"
         case .ripple:
             return "Ripple"
+        case .particle:
+            return "Particle"
         }
     }
 }
@@ -47,6 +52,8 @@ extension Sketch {
             view = SimpleTouch(frame: frame)
         case .ripple:
             view = RippleView(frame: frame)
+        case .particle:
+            view = ParticleView(frame: frame)
         }
         return view
     }

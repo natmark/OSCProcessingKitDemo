@@ -90,7 +90,6 @@ class MainViewController: UIViewController {
         guard let code = try? String(contentsOfFile: Bundle.main.path(forResource: sketch.fileName, ofType: language.fileType) ?? "") else {
             return
         }
-        print(language)
         codeTextView.highlight(code: code, language: language)
     }
 
