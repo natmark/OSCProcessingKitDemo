@@ -9,20 +9,6 @@
 import UIKit
 import Highlightr
 
-enum CodeLanguage: String {
-    case swift
-    case processing
-
-    var fileType: String {
-        switch self {
-        case .swift:
-            return "txt"
-        case .processing:
-            return "pde"
-        }
-    }
-}
-
 class CodeTextView: UITextView {
     let codeAttrString = CodeAttributedString()
 

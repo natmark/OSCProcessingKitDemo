@@ -23,10 +23,16 @@ class MainViewController: UIViewController {
     @IBOutlet weak var codeTextView: CodeTextView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
 
-    let sketches: [Sketch] = [.colorful, .colorful, .colorful]
+    let sketches: [Sketch] = [.colorful, .simpleTouch]
+    let titleLabel = UILabel()
+    let iconView = UIImageView(image: UIImage(named: "logo"))
+
     lazy var dataSource = {
         return SketchesTableViewDataSource(sketches: sketches)
     }()
+    var selectedLanguage: CodeLanguage {
+        return [CodeLanguage.processing, CodeLanguage.swift][segmentedControl.selectedSegmentIndex]
+    }
     var selectedSketch: Sketch = .colorful
     var mode: ViewMode = .sketch
 
@@ -41,26 +47,29 @@ class MainViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = dataSource
-        tableView.reloadData()
         tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: scrollPosition)
 
-        let titleLabel = UILabel()
+        mainNavigationItem.leftBarButtonItems = [
+            UIBarButtonItem(customView: iconView),
+            UIBarButtonItem(customView: titleLabel)
+        ]
+
+        switchTitle(sketch: sketch)
+        switchSketch(sketch: sketch)
+        switchCodeView(language: .processing, sketch: sketch)
+        switchMode(mode: mode)
+    }
+
+    private func switchTitle(sketch: Sketch) {
         titleLabel.attributedText = sketch.mainViewTitleText()
         titleLabel.sizeToFit()
-
-        let iconView = UIImageView(image: UIImage(named: "logo"))
-        mainNavigationItem.leftBarButtonItems = [UIBarButtonItem(customView: iconView), UIBarButtonItem(customView: titleLabel)]
-
-        switchSketch(sketch: sketch)
-        setCodeView(language: .processing, sketch: sketch)
-        switchMode(mode: mode)
     }
 
     private func switchSketch(sketch: Sketch) {
         let switchedSketchView = sketch.instantiateView(frame: sketchView.bounds)
         sketchView.subviews.forEach({ $0.removeFromSuperview() })
         sketchView.addSubview(switchedSketchView)
-        setCodeView(language: .processing, sketch: sketch)
+        switchCodeView(language: .processing, sketch: sketch)
     }
 
     private func switchMode(mode: ViewMode) {
@@ -78,7 +87,7 @@ class MainViewController: UIViewController {
         }
     }
 
-    private func setCodeView(language: CodeLanguage, sketch: Sketch) {
+    private func switchCodeView(language: CodeLanguage, sketch: Sketch) {
         guard let code = try? String(contentsOfFile: Bundle.main.path(forResource: sketch.fileName, ofType: language.fileType) ?? "") else {
             return
         }
@@ -96,20 +105,16 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func didChange(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            setCodeView(language: .processing, sketch: selectedSketch)
-        case 1:
-            setCodeView(language: .swift, sketch: selectedSketch)
-        default:
-            break
-        }
+        switchCodeView(language: selectedLanguage, sketch: selectedSketch)
     }
 }
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedSketch = sketches[indexPath.row]
+        switchTitle(sketch: selectedSketch)
+        switchCodeView(language: selectedLanguage, sketch: selectedSketch)
+        switchSketch(sketch: selectedSketch)
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

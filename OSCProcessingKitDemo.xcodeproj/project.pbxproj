@@ -17,6 +17,7 @@
 		E7536C2220ED6F63006AC702 /* SimpleTouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7536C2120ED6F63006AC702 /* SimpleTouchView.swift */; };
 		E7536C2420ED6F7A006AC702 /* SimpleTouch.txt in Resources */ = {isa = PBXBuildFile; fileRef = E7536C2320ED6F7A006AC702 /* SimpleTouch.txt */; };
 		E7536C2620ED6F8E006AC702 /* SimpleTouch.pde in Resources */ = {isa = PBXBuildFile; fileRef = E7536C2520ED6F8E006AC702 /* SimpleTouch.pde */; };
+		E7536C2820ED7481006AC702 /* CodeLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7536C2720ED7481006AC702 /* CodeLanguage.swift */; };
 		E7828E7420ECA2EE00D614F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7828E7320ECA2EE00D614F5 /* AppDelegate.swift */; };
 		E7828E7B20ECA2F300D614F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7828E7A20ECA2F300D614F5 /* Assets.xcassets */; };
 		E7828E7E20ECA2F300D614F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7828E7C20ECA2F300D614F5 /* LaunchScreen.storyboard */; };
@@ -38,6 +39,7 @@
 		E7536C2120ED6F63006AC702 /* SimpleTouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTouchView.swift; sourceTree = "<group>"; };
 		E7536C2320ED6F7A006AC702 /* SimpleTouch.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = SimpleTouch.txt; sourceTree = "<group>"; };
 		E7536C2520ED6F8E006AC702 /* SimpleTouch.pde */ = {isa = PBXFileReference; lastKnownFileType = text; path = SimpleTouch.pde; sourceTree = "<group>"; };
+		E7536C2720ED7481006AC702 /* CodeLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLanguage.swift; sourceTree = "<group>"; };
 		E7828E7020ECA2EE00D614F5 /* OSCProcessingKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSCProcessingKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7828E7320ECA2EE00D614F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7828E7A20ECA2F300D614F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +93,41 @@
 			path = SimpleTouch;
 			sourceTree = "<group>";
 		};
+		E7536C2920ED74B6006AC702 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E714CF1020ECA9F500A52652 /* MainViewController.swift */,
+				E714CF1220ECAA0600A52652 /* MainViewController.storyboard */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E7536C2A20ED74D2006AC702 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				E7D14AEA20ECB01100906F04 /* SketchesTableViewDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		E7536C2B20ED74EA006AC702 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E7536C1620ED3114006AC702 /* CodeTextView.swift */,
+				E7D14AFC20ED1D7800906F04 /* MainNavigationBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E7536C2C20ED74F8006AC702 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				E7536C2720ED7481006AC702 /* CodeLanguage.swift */,
+				E7536C1A20ED3DD6006AC702 /* Sketch.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
 		E7828E6720ECA2EE00D614F5 = {
 			isa = PBXGroup;
 			children = (
@@ -112,13 +149,11 @@
 			isa = PBXGroup;
 			children = (
 				E7828E7320ECA2EE00D614F5 /* AppDelegate.swift */,
+				E7536C2C20ED74F8006AC702 /* Commons */,
+				E7536C2B20ED74EA006AC702 /* Views */,
+				E7536C2A20ED74D2006AC702 /* DataSources */,
+				E7536C2920ED74B6006AC702 /* ViewControllers */,
 				E714CF1620ECAAF900A52652 /* Extensions */,
-				E7536C1620ED3114006AC702 /* CodeTextView.swift */,
-				E7536C1A20ED3DD6006AC702 /* Sketch.swift */,
-				E7D14AFC20ED1D7800906F04 /* MainNavigationBar.swift */,
-				E7D14AEA20ECB01100906F04 /* SketchesTableViewDataSource.swift */,
-				E714CF1020ECA9F500A52652 /* MainViewController.swift */,
-				E714CF1220ECAA0600A52652 /* MainViewController.storyboard */,
 				E7D14AEC20ECB43600906F04 /* Sketches */,
 				E7828E7A20ECA2F300D614F5 /* Assets.xcassets */,
 				E7828E7C20ECA2F300D614F5 /* LaunchScreen.storyboard */,
@@ -248,6 +283,7 @@
 				E7D14AEB20ECB01100906F04 /* SketchesTableViewDataSource.swift in Sources */,
 				E7536C1720ED3114006AC702 /* CodeTextView.swift in Sources */,
 				E714CF1120ECA9F500A52652 /* MainViewController.swift in Sources */,
+				E7536C2820ED7481006AC702 /* CodeLanguage.swift in Sources */,
 				E7828E7420ECA2EE00D614F5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

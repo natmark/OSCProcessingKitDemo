@@ -11,11 +11,14 @@ import UIKit
 
 enum Sketch {
     case colorful
+    case simpleTouch
 
     var name: String {
         switch self {
         case .colorful:
             return "Colorful"
+        case .simpleTouch:
+            return "SimpleTouch"
         }
     }
 
@@ -23,6 +26,8 @@ enum Sketch {
         switch self {
         case .colorful:
             return "Colorful"
+        case .simpleTouch:
+            return "SimpleTouch"
         }
     }
 }
@@ -32,6 +37,9 @@ extension Sketch {
         switch self {
         case .colorful:
             let view = ColorfulView(frame: frame)
+            return view
+        case .simpleTouch:
+            let view = SimpleTouch(frame: frame)
             return view
         }
     }
