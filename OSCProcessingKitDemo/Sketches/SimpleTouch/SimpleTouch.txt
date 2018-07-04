@@ -1,0 +1,17 @@
+// SimpleTouch - ProcessingKit
+
+import UIKit
+import ProcessingKit
+
+class SimpleTouch: ProcessingView {
+    func setup() {
+        background(255, 255, 255)
+        fill(255,0 ,0)
+    }
+
+    func draw() {
+        if fingerPressed {
+            ellipse(touchX, touchY, 20, 20)
+        }
+    }
+}

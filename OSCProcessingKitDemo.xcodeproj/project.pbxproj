@@ -14,6 +14,9 @@
 		E7536C1720ED3114006AC702 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7536C1620ED3114006AC702 /* CodeTextView.swift */; };
 		E7536C1920ED37C8006AC702 /* Colorful.txt in Resources */ = {isa = PBXBuildFile; fileRef = E7536C1820ED37C8006AC702 /* Colorful.txt */; };
 		E7536C1B20ED3DD6006AC702 /* Sketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7536C1A20ED3DD6006AC702 /* Sketch.swift */; };
+		E7536C2220ED6F63006AC702 /* SimpleTouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7536C2120ED6F63006AC702 /* SimpleTouchView.swift */; };
+		E7536C2420ED6F7A006AC702 /* SimpleTouch.txt in Resources */ = {isa = PBXBuildFile; fileRef = E7536C2320ED6F7A006AC702 /* SimpleTouch.txt */; };
+		E7536C2620ED6F8E006AC702 /* SimpleTouch.pde in Resources */ = {isa = PBXBuildFile; fileRef = E7536C2520ED6F8E006AC702 /* SimpleTouch.pde */; };
 		E7828E7420ECA2EE00D614F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7828E7320ECA2EE00D614F5 /* AppDelegate.swift */; };
 		E7828E7B20ECA2F300D614F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7828E7A20ECA2F300D614F5 /* Assets.xcassets */; };
 		E7828E7E20ECA2F300D614F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7828E7C20ECA2F300D614F5 /* LaunchScreen.storyboard */; };
@@ -32,6 +35,9 @@
 		E7536C1620ED3114006AC702 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		E7536C1820ED37C8006AC702 /* Colorful.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Colorful.txt; sourceTree = "<group>"; };
 		E7536C1A20ED3DD6006AC702 /* Sketch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sketch.swift; sourceTree = "<group>"; };
+		E7536C2120ED6F63006AC702 /* SimpleTouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTouchView.swift; sourceTree = "<group>"; };
+		E7536C2320ED6F7A006AC702 /* SimpleTouch.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = SimpleTouch.txt; sourceTree = "<group>"; };
+		E7536C2520ED6F8E006AC702 /* SimpleTouch.pde */ = {isa = PBXFileReference; lastKnownFileType = text; path = SimpleTouch.pde; sourceTree = "<group>"; };
 		E7828E7020ECA2EE00D614F5 /* OSCProcessingKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSCProcessingKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7828E7320ECA2EE00D614F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7828E7A20ECA2F300D614F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +81,16 @@
 			path = Colorful;
 			sourceTree = "<group>";
 		};
+		E7536C2020ED6F48006AC702 /* SimpleTouch */ = {
+			isa = PBXGroup;
+			children = (
+				E7536C2120ED6F63006AC702 /* SimpleTouchView.swift */,
+				E7536C2320ED6F7A006AC702 /* SimpleTouch.txt */,
+				E7536C2520ED6F8E006AC702 /* SimpleTouch.pde */,
+			);
+			path = SimpleTouch;
+			sourceTree = "<group>";
+		};
 		E7828E6720ECA2EE00D614F5 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +130,7 @@
 		E7D14AEC20ECB43600906F04 /* Sketches */ = {
 			isa = PBXGroup;
 			children = (
+				E7536C2020ED6F48006AC702 /* SimpleTouch */,
 				E7536C1320ED2D7C006AC702 /* Colorful */,
 			);
 			path = Sketches;
@@ -191,6 +208,8 @@
 				E714CF1320ECAA0600A52652 /* MainViewController.storyboard in Resources */,
 				E7828E7E20ECA2F300D614F5 /* LaunchScreen.storyboard in Resources */,
 				E7536C1920ED37C8006AC702 /* Colorful.txt in Resources */,
+				E7536C2620ED6F8E006AC702 /* SimpleTouch.pde in Resources */,
+				E7536C2420ED6F7A006AC702 /* SimpleTouch.txt in Resources */,
 				E7828E7B20ECA2F300D614F5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7D14AFD20ED1D7800906F04 /* MainNavigationBar.swift in Sources */,
+				E7536C2220ED6F63006AC702 /* SimpleTouchView.swift in Sources */,
 				E7536C1B20ED3DD6006AC702 /* Sketch.swift in Sources */,
 				E7D14AEE20ECB4DF00906F04 /* ColorfulView.swift in Sources */,
 				E714CF1520ECAAF300A52652 /* ViewController.swift in Sources */,
