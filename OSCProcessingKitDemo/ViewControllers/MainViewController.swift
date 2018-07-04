@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var codeTextView: CodeTextView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
 
-    let sketches: [Sketch] = [.colorful, .simpleTouch]
+    let sketches: [Sketch] = Sketch.allValues
     let titleLabel = UILabel()
     let iconView = UIImageView(image: UIImage(named: "logo"))
 
@@ -31,9 +31,9 @@ class MainViewController: UIViewController {
         return SketchesTableViewDataSource(sketches: sketches)
     }()
     var selectedLanguage: CodeLanguage {
-        return [CodeLanguage.processing, CodeLanguage.swift][segmentedControl.selectedSegmentIndex]
+        return CodeLanguage.allValues[segmentedControl.selectedSegmentIndex]
     }
-    var selectedSketch: Sketch = .colorful
+    var selectedSketch = Sketch.allValues.first ?? .colorful
     var mode: ViewMode = .sketch
 
     override func viewDidLoad() {
@@ -56,7 +56,7 @@ class MainViewController: UIViewController {
 
         switchTitle(sketch: sketch)
         switchSketch(sketch: sketch)
-        switchCodeView(language: .processing, sketch: sketch)
+        switchCodeView(language: selectedLanguage, sketch: sketch)
         switchMode(mode: mode)
     }
 
@@ -69,7 +69,6 @@ class MainViewController: UIViewController {
         let switchedSketchView = sketch.instantiateView(frame: sketchView.bounds)
         sketchView.subviews.forEach({ $0.removeFromSuperview() })
         sketchView.addSubview(switchedSketchView)
-        switchCodeView(language: .processing, sketch: sketch)
     }
 
     private func switchMode(mode: ViewMode) {
@@ -91,6 +90,7 @@ class MainViewController: UIViewController {
         guard let code = try? String(contentsOfFile: Bundle.main.path(forResource: sketch.fileName, ofType: language.fileType) ?? "") else {
             return
         }
+        print(language)
         codeTextView.highlight(code: code, language: language)
     }
 

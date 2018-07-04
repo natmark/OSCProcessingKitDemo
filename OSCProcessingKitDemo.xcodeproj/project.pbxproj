@@ -18,6 +18,10 @@
 		E7536C2420ED6F7A006AC702 /* SimpleTouch.txt in Resources */ = {isa = PBXBuildFile; fileRef = E7536C2320ED6F7A006AC702 /* SimpleTouch.txt */; };
 		E7536C2620ED6F8E006AC702 /* SimpleTouch.pde in Resources */ = {isa = PBXBuildFile; fileRef = E7536C2520ED6F8E006AC702 /* SimpleTouch.pde */; };
 		E7536C2820ED7481006AC702 /* CodeLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7536C2720ED7481006AC702 /* CodeLanguage.swift */; };
+		E7536C3820ED76A3006AC702 /* Ripple.txt in Resources */ = {isa = PBXBuildFile; fileRef = E7536C3520ED76A3006AC702 /* Ripple.txt */; };
+		E7536C3920ED76A3006AC702 /* Ripple.pde in Resources */ = {isa = PBXBuildFile; fileRef = E7536C3620ED76A3006AC702 /* Ripple.pde */; };
+		E7536C3A20ED76A3006AC702 /* RippleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7536C3720ED76A3006AC702 /* RippleView.swift */; };
+		E7536C3C20ED7832006AC702 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7536C3B20ED7832006AC702 /* Enum.swift */; };
 		E7828E7420ECA2EE00D614F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7828E7320ECA2EE00D614F5 /* AppDelegate.swift */; };
 		E7828E7B20ECA2F300D614F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7828E7A20ECA2F300D614F5 /* Assets.xcassets */; };
 		E7828E7E20ECA2F300D614F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7828E7C20ECA2F300D614F5 /* LaunchScreen.storyboard */; };
@@ -40,6 +44,10 @@
 		E7536C2320ED6F7A006AC702 /* SimpleTouch.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = SimpleTouch.txt; sourceTree = "<group>"; };
 		E7536C2520ED6F8E006AC702 /* SimpleTouch.pde */ = {isa = PBXFileReference; lastKnownFileType = text; path = SimpleTouch.pde; sourceTree = "<group>"; };
 		E7536C2720ED7481006AC702 /* CodeLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLanguage.swift; sourceTree = "<group>"; };
+		E7536C3520ED76A3006AC702 /* Ripple.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Ripple.txt; sourceTree = "<group>"; };
+		E7536C3620ED76A3006AC702 /* Ripple.pde */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Ripple.pde; sourceTree = "<group>"; };
+		E7536C3720ED76A3006AC702 /* RippleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RippleView.swift; sourceTree = "<group>"; };
+		E7536C3B20ED7832006AC702 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		E7828E7020ECA2EE00D614F5 /* OSCProcessingKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSCProcessingKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7828E7320ECA2EE00D614F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7828E7A20ECA2F300D614F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				E714CF1420ECAAF300A52652 /* ViewController.swift */,
+				E7536C3B20ED7832006AC702 /* Enum.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -128,6 +137,16 @@
 			path = Commons;
 			sourceTree = "<group>";
 		};
+		E7536C3420ED767B006AC702 /* Ripple */ = {
+			isa = PBXGroup;
+			children = (
+				E7536C3620ED76A3006AC702 /* Ripple.pde */,
+				E7536C3520ED76A3006AC702 /* Ripple.txt */,
+				E7536C3720ED76A3006AC702 /* RippleView.swift */,
+			);
+			path = Ripple;
+			sourceTree = "<group>";
+		};
 		E7828E6720ECA2EE00D614F5 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +184,7 @@
 		E7D14AEC20ECB43600906F04 /* Sketches */ = {
 			isa = PBXGroup;
 			children = (
+				E7536C3420ED767B006AC702 /* Ripple */,
 				E7536C2020ED6F48006AC702 /* SimpleTouch */,
 				E7536C1320ED2D7C006AC702 /* Colorful */,
 			);
@@ -243,6 +263,8 @@
 				E714CF1320ECAA0600A52652 /* MainViewController.storyboard in Resources */,
 				E7828E7E20ECA2F300D614F5 /* LaunchScreen.storyboard in Resources */,
 				E7536C1920ED37C8006AC702 /* Colorful.txt in Resources */,
+				E7536C3920ED76A3006AC702 /* Ripple.pde in Resources */,
+				E7536C3820ED76A3006AC702 /* Ripple.txt in Resources */,
 				E7536C2620ED6F8E006AC702 /* SimpleTouch.pde in Resources */,
 				E7536C2420ED6F7A006AC702 /* SimpleTouch.txt in Resources */,
 				E7828E7B20ECA2F300D614F5 /* Assets.xcassets in Resources */,
@@ -277,10 +299,12 @@
 			files = (
 				E7D14AFD20ED1D7800906F04 /* MainNavigationBar.swift in Sources */,
 				E7536C2220ED6F63006AC702 /* SimpleTouchView.swift in Sources */,
+				E7536C3C20ED7832006AC702 /* Enum.swift in Sources */,
 				E7536C1B20ED3DD6006AC702 /* Sketch.swift in Sources */,
 				E7D14AEE20ECB4DF00906F04 /* ColorfulView.swift in Sources */,
 				E714CF1520ECAAF300A52652 /* ViewController.swift in Sources */,
 				E7D14AEB20ECB01100906F04 /* SketchesTableViewDataSource.swift in Sources */,
+				E7536C3A20ED76A3006AC702 /* RippleView.swift in Sources */,
 				E7536C1720ED3114006AC702 /* CodeTextView.swift in Sources */,
 				E714CF1120ECA9F500A52652 /* MainViewController.swift in Sources */,
 				E7536C2820ED7481006AC702 /* CodeLanguage.swift in Sources */,

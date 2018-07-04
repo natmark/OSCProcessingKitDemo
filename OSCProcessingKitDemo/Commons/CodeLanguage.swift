@@ -6,16 +6,16 @@
 //  Copyright © 2018年 Atsuya Sato. All rights reserved.
 //
 
-enum CodeLanguage: String {
-    case swift
+enum CodeLanguage: String, EnumCollection {
     case processing
+    case swift
 
     var fileType: String {
         switch self {
-        case .swift:
-            return "txt"
         case .processing:
             return "pde"
+        case .swift:
+            return "txt"
         }
     }
 }

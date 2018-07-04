@@ -9,9 +9,10 @@
 import ProcessingKit
 import UIKit
 
-enum Sketch {
+enum Sketch: EnumCollection {
     case colorful
     case simpleTouch
+    case ripple
 
     var name: String {
         switch self {
@@ -19,6 +20,8 @@ enum Sketch {
             return "Colorful"
         case .simpleTouch:
             return "SimpleTouch"
+        case .ripple:
+            return "Ripple"
         }
     }
 
@@ -28,20 +31,24 @@ enum Sketch {
             return "Colorful"
         case .simpleTouch:
             return "SimpleTouch"
+        case .ripple:
+            return "Ripple"
         }
     }
 }
 
 extension Sketch {
     func instantiateView(frame: CGRect) -> ProcessingView {
+        let view: ProcessingView
         switch self {
         case .colorful:
-            let view = ColorfulView(frame: frame)
-            return view
+            view = ColorfulView(frame: frame)
         case .simpleTouch:
-            let view = SimpleTouch(frame: frame)
-            return view
+            view = SimpleTouch(frame: frame)
+        case .ripple:
+            view = RippleView(frame: frame)
         }
+        return view
     }
 }
 

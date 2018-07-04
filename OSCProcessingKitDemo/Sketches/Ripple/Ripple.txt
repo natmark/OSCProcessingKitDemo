@@ -1,0 +1,37 @@
+// Ripple - ProcessingKit
+
+import UIKit
+import ProcessingKit
+
+class Ripple {
+    var x: CGFloat = 0.0
+    var y: CGFloat = 0.0
+    var size: CGFloat = 0.0
+    init(x: CGFloat, y: CGFloat, size: CGFloat) {
+        self.x = x
+        self.y = y
+        self.size = size
+    }
+}
+
+class RippleView: ProcessingView {
+    var ripples: [Ripple] = []
+
+    func draw(){
+        background(255, 255, 255)
+
+        noFill()
+        stroke(0, 0, 255)
+        strokeWeight(1.0)
+
+        for ripple in ripples {
+        ripple.size = ripple.size + 5
+        ellipse(ripple.x, ripple.y, ripple.size, ripple.size)
+    }
+    ripples = ripples.filter { $0.size < 1_000 }
+
+    if arc4random_uniform(20) == 0 {
+        ripples.append(Ripple(x: CGFloat(arc4random_uniform(UInt32(width))), y: CGFloat(arc4random_uniform(UInt32(height))), size: 0))
+        }
+    }
+}
