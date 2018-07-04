@@ -97,11 +97,11 @@
 			children = (
 				E7828E7320ECA2EE00D614F5 /* AppDelegate.swift */,
 				E714CF1620ECAAF900A52652 /* Extensions */,
-				E714CF1020ECA9F500A52652 /* MainViewController.swift */,
-				E7D14AEA20ECB01100906F04 /* SketchesTableViewDataSource.swift */,
 				E7536C1620ED3114006AC702 /* CodeTextView.swift */,
 				E7536C1A20ED3DD6006AC702 /* Sketch.swift */,
 				E7D14AFC20ED1D7800906F04 /* MainNavigationBar.swift */,
+				E7D14AEA20ECB01100906F04 /* SketchesTableViewDataSource.swift */,
+				E714CF1020ECA9F500A52652 /* MainViewController.swift */,
 				E714CF1220ECAA0600A52652 /* MainViewController.storyboard */,
 				E7D14AEC20ECB43600906F04 /* Sketches */,
 				E7828E7A20ECA2F300D614F5 /* Assets.xcassets */,
