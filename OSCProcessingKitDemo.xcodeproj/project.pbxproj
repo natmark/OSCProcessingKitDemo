@@ -10,6 +10,7 @@
 		E714CF1120ECA9F500A52652 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E714CF1020ECA9F500A52652 /* MainViewController.swift */; };
 		E714CF1320ECAA0600A52652 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E714CF1220ECAA0600A52652 /* MainViewController.storyboard */; };
 		E714CF1520ECAAF300A52652 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E714CF1420ECAAF300A52652 /* ViewController.swift */; };
+		E7536C1720ED3114006AC702 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7536C1620ED3114006AC702 /* CodeTextView.swift */; };
 		E7536C1B20ED3DD6006AC702 /* Sketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7536C1A20ED3DD6006AC702 /* Sketch.swift */; };
 		E7828E7420ECA2EE00D614F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7828E7320ECA2EE00D614F5 /* AppDelegate.swift */; };
 		E7828E7B20ECA2F300D614F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7828E7A20ECA2F300D614F5 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		E714CF1020ECA9F500A52652 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E714CF1220ECAA0600A52652 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		E714CF1420ECAAF300A52652 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E7536C1620ED3114006AC702 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		E7536C1A20ED3DD6006AC702 /* Sketch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sketch.swift; sourceTree = "<group>"; };
 		E7828E7020ECA2EE00D614F5 /* OSCProcessingKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSCProcessingKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7828E7320ECA2EE00D614F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				E714CF1620ECAAF900A52652 /* Extensions */,
 				E714CF1020ECA9F500A52652 /* MainViewController.swift */,
 				E7D14AEA20ECB01100906F04 /* SketchesTableViewDataSource.swift */,
+				E7536C1620ED3114006AC702 /* CodeTextView.swift */,
 				E7536C1A20ED3DD6006AC702 /* Sketch.swift */,
 				E7D14AFC20ED1D7800906F04 /* MainNavigationBar.swift */,
 				E714CF1220ECAA0600A52652 /* MainViewController.storyboard */,
@@ -207,6 +210,7 @@
 				E7D14AEE20ECB4DF00906F04 /* ColorfulView.swift in Sources */,
 				E714CF1520ECAAF300A52652 /* ViewController.swift in Sources */,
 				E7D14AEB20ECB01100906F04 /* SketchesTableViewDataSource.swift in Sources */,
+				E7536C1720ED3114006AC702 /* CodeTextView.swift in Sources */,
 				E714CF1120ECA9F500A52652 /* MainViewController.swift in Sources */,
 				E7828E7420ECA2EE00D614F5 /* AppDelegate.swift in Sources */,
 			);
