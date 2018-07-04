@@ -1,4 +1,10 @@
-// Colorful - ProcessingKit
+//
+//  ColorfulView.swift
+//  OSCProcessingKitDemo
+//
+//  Created by AtsuyaSato on 2018/07/05.
+//  Copyright © 2018年 Atsuya Sato. All rights reserved.
+//
 
 import UIKit
 import ProcessingKit
