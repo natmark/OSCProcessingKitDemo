@@ -17,6 +17,7 @@
 		E7D14AEE20ECB4DF00906F04 /* ColorfulView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D14AED20ECB4DF00906F04 /* ColorfulView.swift */; };
 		E7D14AF220ECB51400906F04 /* ProcessingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D14AF020ECB51400906F04 /* ProcessingKit.framework */; };
 		E7D14AF320ECB51400906F04 /* Highlightr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D14AF120ECB51400906F04 /* Highlightr.framework */; };
+		E7D14AFD20ED1D7800906F04 /* MainNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D14AFC20ED1D7800906F04 /* MainNavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E7D14AED20ECB4DF00906F04 /* ColorfulView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulView.swift; sourceTree = "<group>"; };
 		E7D14AF020ECB51400906F04 /* ProcessingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcessingKit.framework; path = Carthage/Build/iOS/ProcessingKit.framework; sourceTree = "<group>"; };
 		E7D14AF120ECB51400906F04 /* Highlightr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Highlightr.framework; path = Carthage/Build/iOS/Highlightr.framework; sourceTree = "<group>"; };
+		E7D14AFC20ED1D7800906F04 /* MainNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				E714CF1620ECAAF900A52652 /* Extensions */,
 				E714CF1020ECA9F500A52652 /* MainViewController.swift */,
 				E7D14AEA20ECB01100906F04 /* SketchesTableViewDataSource.swift */,
+				E7D14AFC20ED1D7800906F04 /* MainNavigationBar.swift */,
 				E714CF1220ECAA0600A52652 /* MainViewController.storyboard */,
 				E7D14AEC20ECB43600906F04 /* Sketches */,
 				E7828E7A20ECA2F300D614F5 /* Assets.xcassets */,
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7D14AFD20ED1D7800906F04 /* MainNavigationBar.swift in Sources */,
 				E7D14AEE20ECB4DF00906F04 /* ColorfulView.swift in Sources */,
 				E714CF1520ECAAF300A52652 /* ViewController.swift in Sources */,
 				E7D14AEB20ECB01100906F04 /* SketchesTableViewDataSource.swift in Sources */,

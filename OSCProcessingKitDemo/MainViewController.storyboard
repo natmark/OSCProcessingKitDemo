@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ProcessingKit-->
+        <!--Title-->
         <scene sceneID="2B2-og-q7P">
             <objects>
                 <viewController id="1i4-fA-hJm" customClass="MainViewController" customModule="OSCProcessingKitDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,32 +19,59 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SVw-DU-Ibo">
-                                <rect key="frame" x="0.0" y="64" width="375" height="770"/>
-                                <color key="backgroundColor" red="0.44286790818055555" green="0.078770749269999996" blue="0.84905803224322218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="834"/>
+                                <color key="backgroundColor" red="0.60546556443055544" green="0.46939574927" blue="0.84905803224322218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="Z2r-me-M2U"/>
+                                    <constraint firstAttribute="width" constant="300" id="Z2r-me-M2U"/>
                                 </constraints>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jkz-Os-gMa" customClass="ColorfulView" customModule="OSCProcessingKitDemo" customModuleProvider="target">
-                                <rect key="frame" x="375" y="64" width="737" height="770"/>
+                                <rect key="frame" x="300" y="64" width="812" height="770"/>
                             </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ede-35-GR1" customClass="MainNavigationBar" customModule="OSCProcessingKitDemo" customModuleProvider="target">
+                                <rect key="frame" x="300" y="0.0" width="812" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="mZO-Mv-Wgf"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="Hhi-Jz-lYV">
+                                        <nil key="title"/>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="enS-BL-YKQ">
+                                            <rect key="frame" x="307.5" y="7" width="197" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Processing"/>
+                                                <segment title="ProcessingKit"/>
+                                            </segments>
+                                        </segmentedControl>
+                                        <barButtonItem key="rightBarButtonItem" title="Code" id="pbg-d3-0Cg"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jkz-Os-gMa" firstAttribute="leading" secondItem="SVw-DU-Ibo" secondAttribute="trailing" id="62g-ro-m8Z"/>
+                            <constraint firstItem="ede-35-GR1" firstAttribute="top" secondItem="XkK-Px-mLp" secondAttribute="top" id="7rS-Ch-3kB"/>
                             <constraint firstItem="jkz-Os-gMa" firstAttribute="trailing" secondItem="dFA-rz-D26" secondAttribute="trailing" id="AwT-bn-RIL"/>
+                            <constraint firstItem="SVw-DU-Ibo" firstAttribute="top" secondItem="XkK-Px-mLp" secondAttribute="top" id="Bw0-jv-PLJ"/>
                             <constraint firstItem="SVw-DU-Ibo" firstAttribute="leading" secondItem="dFA-rz-D26" secondAttribute="leading" id="GrG-jH-pOl"/>
-                            <constraint firstItem="SVw-DU-Ibo" firstAttribute="top" secondItem="dFA-rz-D26" secondAttribute="top" id="Vd5-Bb-eZ4"/>
+                            <constraint firstItem="ede-35-GR1" firstAttribute="leading" secondItem="SVw-DU-Ibo" secondAttribute="trailing" id="Ndv-IM-xTx"/>
                             <constraint firstItem="dFA-rz-D26" firstAttribute="bottom" secondItem="jkz-Os-gMa" secondAttribute="bottom" id="Z5S-n6-Gqg"/>
                             <constraint firstItem="SVw-DU-Ibo" firstAttribute="bottom" secondItem="dFA-rz-D26" secondAttribute="bottom" id="bjE-Wu-a9Y"/>
-                            <constraint firstItem="jkz-Os-gMa" firstAttribute="top" secondItem="dFA-rz-D26" secondAttribute="top" id="mUA-v6-ScY"/>
+                            <constraint firstItem="ede-35-GR1" firstAttribute="trailing" secondItem="dFA-rz-D26" secondAttribute="trailing" id="hZW-hx-jkA"/>
+                            <constraint firstItem="jkz-Os-gMa" firstAttribute="top" secondItem="ede-35-GR1" secondAttribute="bottom" id="j2T-Vf-JLx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dFA-rz-D26"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ProcessingKit" id="V6Z-CQ-773"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationItem key="navigationItem" title="Title" id="Stg-7G-XjA">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="5yW-Rd-Q5r"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="GZJ-YT-4gL"/>
+                    </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="jkz-Os-gMa" id="Zfe-yX-Nox"/>
+                        <outlet property="mainNavigationItem" destination="Hhi-Jz-lYV" id="bVB-kQ-UTm"/>
                         <outlet property="tableView" destination="SVw-DU-Ibo" id="jel-8O-JwX"/>
                     </connections>
                 </viewController>
