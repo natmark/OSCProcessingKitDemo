@@ -1,0 +1,27 @@
+// Colorful - ProcessingKit
+
+import UIKit
+import ProcessingKit
+
+class ColorfulView: ProcessingView {
+    func setup() {
+        background(0, 0, 0)
+        noStroke()
+    }
+
+    func draw() {
+        if fingerPressed {
+            fill(UIColor(hue: random(255) / 255.0, saturation: 255 / 255.0, brightness: 255 / 255.0, alpha: 255 / 255.0))
+
+            let diameter = CGFloat(Int(random(20)) % 18)
+            let x = touchX + random(20) - 10
+            let y = touchY + random(20) - 10
+            ellipse(x, y, diameter, diameter)
+        }
+    }
+
+    func random(_ i: Int) -> CGFloat {
+        return CGFloat(arc4random_uniform(UInt32(i)))
+    }
+}
+

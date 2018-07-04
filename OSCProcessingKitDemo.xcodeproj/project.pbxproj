@@ -10,7 +10,9 @@
 		E714CF1120ECA9F500A52652 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E714CF1020ECA9F500A52652 /* MainViewController.swift */; };
 		E714CF1320ECAA0600A52652 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E714CF1220ECAA0600A52652 /* MainViewController.storyboard */; };
 		E714CF1520ECAAF300A52652 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E714CF1420ECAAF300A52652 /* ViewController.swift */; };
+		E7536C1520ED2D99006AC702 /* Colorful.pde in Resources */ = {isa = PBXBuildFile; fileRef = E7536C1420ED2D99006AC702 /* Colorful.pde */; };
 		E7536C1720ED3114006AC702 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7536C1620ED3114006AC702 /* CodeTextView.swift */; };
+		E7536C1920ED37C8006AC702 /* Colorful.txt in Resources */ = {isa = PBXBuildFile; fileRef = E7536C1820ED37C8006AC702 /* Colorful.txt */; };
 		E7536C1B20ED3DD6006AC702 /* Sketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7536C1A20ED3DD6006AC702 /* Sketch.swift */; };
 		E7828E7420ECA2EE00D614F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7828E7320ECA2EE00D614F5 /* AppDelegate.swift */; };
 		E7828E7B20ECA2F300D614F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7828E7A20ECA2F300D614F5 /* Assets.xcassets */; };
@@ -26,7 +28,9 @@
 		E714CF1020ECA9F500A52652 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E714CF1220ECAA0600A52652 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		E714CF1420ECAAF300A52652 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E7536C1420ED2D99006AC702 /* Colorful.pde */ = {isa = PBXFileReference; lastKnownFileType = text; path = Colorful.pde; sourceTree = "<group>"; };
 		E7536C1620ED3114006AC702 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
+		E7536C1820ED37C8006AC702 /* Colorful.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Colorful.txt; sourceTree = "<group>"; };
 		E7536C1A20ED3DD6006AC702 /* Sketch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sketch.swift; sourceTree = "<group>"; };
 		E7828E7020ECA2EE00D614F5 /* OSCProcessingKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSCProcessingKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7828E7320ECA2EE00D614F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,16 @@
 				E714CF1420ECAAF300A52652 /* ViewController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E7536C1320ED2D7C006AC702 /* Colorful */ = {
+			isa = PBXGroup;
+			children = (
+				E7D14AED20ECB4DF00906F04 /* ColorfulView.swift */,
+				E7536C1420ED2D99006AC702 /* Colorful.pde */,
+				E7536C1820ED37C8006AC702 /* Colorful.txt */,
+			);
+			path = Colorful;
 			sourceTree = "<group>";
 		};
 		E7828E6720ECA2EE00D614F5 = {
@@ -100,7 +114,7 @@
 		E7D14AEC20ECB43600906F04 /* Sketches */ = {
 			isa = PBXGroup;
 			children = (
-				E7D14AED20ECB4DF00906F04 /* ColorfulView.swift */,
+				E7536C1320ED2D7C006AC702 /* Colorful */,
 			);
 			path = Sketches;
 			sourceTree = "<group>";
@@ -173,8 +187,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7536C1520ED2D99006AC702 /* Colorful.pde in Resources */,
 				E714CF1320ECAA0600A52652 /* MainViewController.storyboard in Resources */,
 				E7828E7E20ECA2F300D614F5 /* LaunchScreen.storyboard in Resources */,
+				E7536C1920ED37C8006AC702 /* Colorful.txt in Resources */,
 				E7828E7B20ECA2F300D614F5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
