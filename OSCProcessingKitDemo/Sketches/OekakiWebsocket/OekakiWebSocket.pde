@@ -59,7 +59,7 @@ void draw(){
     for (int i = 0; i < points.size(); i++) {
         JSONObject item = points.getJSONObject(i);
         fill(item.getInt("red"),item.getInt("green"),item.getInt("blue"));
-        ellipse(item.getInt("mouseX"), item.getInt("mouseY"), 10, 10);
+        ellipse(item.getInt("x"), item.getInt("y"), 10, 10);
     }
 }
 
@@ -82,8 +82,8 @@ void mousePressed() {
     json.setInt("red", int(red(colors[selectedColor])));
     json.setInt("green", int(green(colors[selectedColor])));
     json.setInt("blue", int(blue(colors[selectedColor])));
-    json.setInt("mouseX", mouseX);
-    json.setInt("mouseY", mouseY);
+    json.setInt("x", mouseX);
+    json.setInt("y", mouseY);
 
     wsc.sendMessage(json.toString());
 }

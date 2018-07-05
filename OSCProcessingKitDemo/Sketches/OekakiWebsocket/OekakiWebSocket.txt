@@ -58,12 +58,6 @@ class OekakiWebSocketView: ProcessingView {
     func draw() {
         background(255, 255, 255)
 
-        if !socket.isConnected {
-            fill(255,0,0)
-            text("[ERROR]: Connection has no connected handler...", 50, height/2)
-            return
-        }
-
         for (index, element) in colors.enumerated() {
             if index == selectedPaintColor.rawValue {
                 stroke(128, 128, 128)

@@ -10,7 +10,7 @@ import UIKit
 import ProcessingKit
 import Starscream
 
-struct Point: Codable {
+struct Point: Codable, Hashable {
     let red: Int
     let green: Int
     let blue: Int
@@ -41,8 +41,8 @@ enum PaintColor: Int {
 
 class OekakiWebSocketView: ProcessingView {
     var selectedPaintColor: PaintColor = .red
-    var points: [Point] = []
     let socket = WebSocket(url: URL(string: "ws://127.0.0.1:8080/")!)
+    var points: Set<Point> = []
     let colors: [Color] = [
         Color(192, 0, 0),
         Color(0, 192, 0),
@@ -65,8 +65,8 @@ class OekakiWebSocketView: ProcessingView {
         background(255, 255, 255)
 
         if !socket.isConnected {
-            fill(255,0,0)
-            text("[ERROR]: Connection has no connected handler...", 50, height/2)
+            fill(0,0,255)
+            text("Connecting to remote oekaki server...", 50, height/2)
             return
         }
 
@@ -101,7 +101,7 @@ class OekakiWebSocketView: ProcessingView {
             }
         }
 
-        if(touchX > 15 && touchX < 45 && touchY > height - 70 && touchY < height - 50){
+        if(touchX > 15 && touchX < 45 && touchY > height - 80 && touchY < height - 50){
             let jsonObj = ["delete": true]
             guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj, options: []) else {
                 return
@@ -109,7 +109,7 @@ class OekakiWebSocketView: ProcessingView {
 
             let jsonStr = String(bytes: jsonData, encoding: .utf8) ?? ""
             socket.write(string: jsonStr)
-            return;
+            return
         }
 
         let jsonObj: [String: Int] = [
@@ -126,6 +126,7 @@ class OekakiWebSocketView: ProcessingView {
 
         let jsonStr = String(bytes: jsonData, encoding: .utf8)!
 
+        points.insert(Point(red: colors[selectedPaintColor.rawValue].red, green: colors[selectedPaintColor.rawValue].green, blue: colors[selectedPaintColor.rawValue].blue, x: Int(touchX), y: Int(touchY)))
         socket.write(string: jsonStr)
     }
 }
@@ -143,7 +144,12 @@ extension OekakiWebSocketView: WebSocketDelegate {
         guard let decodeObj = try? JSONDecoder().decode([Point].self, from: text.data(using: .utf8)!) else {
             return
         }
-        points = decodeObj
+        for point in decodeObj {
+            points.insert(point)
+        }
+        if decodeObj.count == 0 {
+            points.removeAll()
+        }
     }
 
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
