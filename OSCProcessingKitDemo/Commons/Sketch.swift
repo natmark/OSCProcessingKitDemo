@@ -14,6 +14,7 @@ enum Sketch: EnumCollection {
     case simpleTouch
     case ripple
     case particle
+    case oekakiWebSocket
 
     var name: String {
         switch self {
@@ -25,6 +26,8 @@ enum Sketch: EnumCollection {
             return "Ripple"
         case .particle:
             return "Particle"
+        case .oekakiWebSocket:
+            return "OekakiWebSocket"
         }
     }
 
@@ -38,6 +41,8 @@ enum Sketch: EnumCollection {
             return "Ripple"
         case .particle:
             return "Particle"
+        case .oekakiWebSocket:
+            return "OekakiWebSocket"
         }
     }
 }
@@ -54,6 +59,8 @@ extension Sketch {
             view = RippleView(frame: frame)
         case .particle:
             view = ParticleView(frame: frame)
+        case .oekakiWebSocket:
+            view = OekakiWebSocketView(frame: frame)
         }
         return view
     }
