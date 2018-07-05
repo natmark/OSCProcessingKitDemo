@@ -88,6 +88,7 @@ class OekakiWebSocketView: ProcessingView {
         }
 
         for point in points {
+            noStroke()
             fill(CGFloat(point.red), CGFloat(point.green), CGFloat(point.blue))
             ellipse(CGFloat(point.x), CGFloat(point.y), 10, 10)
         }
