@@ -1,2 +1,3 @@
+github "daltoniam/starscream" "3.0.5"
 github "natmark/ProcessingKit" "1.0.6"
 github "raspu/Highlightr" "2.0.1"
