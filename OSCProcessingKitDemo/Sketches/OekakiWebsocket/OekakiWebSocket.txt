@@ -1,27 +1,145 @@
-// Colorful - ProcessingKit
+// OekakiWebSocket - ProcessingKit
 
 import UIKit
 import ProcessingKit
+import Starscream
 
-class ColorfulView: ProcessingView {
-    func setup() {
-        background(0, 0, 0)
-        noStroke()
-    }
+struct Point: Codable {
+    let red: Int
+    let green: Int
+    let blue: Int
+    let x: Int
+    let y: Int
+}
 
-    func draw() {
-        if fingerPressed {
-            fill(UIColor(hue: random(255) / 255.0, saturation: 255 / 255.0, brightness: 255 / 255.0, alpha: 255 / 255.0))
+struct Color {
+    let red: Int
+    let green: Int
+    let blue: Int
 
-            let diameter = CGFloat(Int(random(20)) % 18)
-            let x = touchX + random(20) - 10
-            let y = touchY + random(20) - 10
-            ellipse(x, y, diameter, diameter)
-        }
-    }
-
-    func random(_ i: Int) -> CGFloat {
-        return CGFloat(arc4random_uniform(UInt32(i)))
+    init(_ red: Int, _ green: Int, _ blue: Int) {
+        self.red = red
+        self.green = green
+        self.blue = blue
     }
 }
 
+enum PaintColor: Int {
+    case red
+    case green
+    case blue
+    case purple
+    case aqua
+    case yellow
+}
+
+class OekakiWebSocketView: ProcessingView {
+    var selectedPaintColor: PaintColor = .red
+    var points: [Point] = []
+    let socket = WebSocket(url: URL(string: "ws://127.0.0.1:8080/")!)
+    let colors: [Color] = [
+        Color(192, 0, 0),
+        Color(0, 192, 0),
+        Color(0, 0, 192),
+        Color(192, 0, 192),
+        Color(0, 192, 192),
+        Color(192, 192, 0),
+    ]
+
+    func setup() {
+        socket.delegate = self
+        socket.connect()
+
+        noStroke()
+        strokeWeight(2.0)
+        textSize(32)
+    }
+
+    func draw() {
+        background(255, 255, 255)
+
+        if !socket.isConnected {
+            fill(255,0,0)
+            text("[ERROR]: Connection has no connected handler...", 50, height/2)
+            return
+        }
+
+        for (index, element) in colors.enumerated() {
+            if index == selectedPaintColor.rawValue {
+                stroke(128, 128, 128)
+            } else {
+                noStroke()
+            }
+            fill(CGFloat(element.red), CGFloat(element.green), CGFloat(element.blue))
+            ellipse(30, CGFloat((index+1) * 50), 30, 30)
+        }
+
+        fill(255, 0 ,0)
+        text("X", 20, height - 50)
+
+        if fingerPressed {
+            fingerTapped()
+        }
+
+        for point in points {
+            fill(CGFloat(point.red), CGFloat(point.green), CGFloat(point.blue))
+            ellipse(CGFloat(point.x), CGFloat(point.y), 10, 10)
+        }
+    }
+
+    func fingerTapped() {
+        for i in 0 ..< colors.count {
+            if(touchX > 15 && touchX < 45 && Int(touchY) > ((i+1) * 50 - 15) && Int(touchY) < ((i+1) * 50 + 15)){
+                selectedPaintColor = PaintColor(rawValue: i) ?? .red
+                return
+            }
+        }
+
+        if(touchX > 15 && touchX < 45 && touchY > height - 70 && touchY < height - 50){
+            let jsonObj = ["delete": true]
+            guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj, options: []) else {
+                return
+            }
+
+            let jsonStr = String(bytes: jsonData, encoding: .utf8) ?? ""
+            socket.write(string: jsonStr)
+            return;
+        }
+
+        let jsonObj: [String: Int] = [
+            "red": colors[selectedPaintColor.rawValue].red,
+            "green": colors[selectedPaintColor.rawValue].green,
+            "blue": colors[selectedPaintColor.rawValue].blue,
+            "x": Int(touchX),
+            "y": Int(touchY)
+        ]
+
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj, options: []) else {
+            return
+        }
+
+        let jsonStr = String(bytes: jsonData, encoding: .utf8)!
+
+        socket.write(string: jsonStr)
+    }
+}
+
+extension OekakiWebSocketView: WebSocketDelegate {
+    func websocketDidConnect(socket: WebSocketClient) {
+        print("websocket is connected")
+    }
+
+    func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
+        print("websocket is disconnected")
+    }
+
+    func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
+        guard let decodeObj = try? JSONDecoder().decode([Point].self, from: text.data(using: .utf8)!) else {
+            return
+        }
+        points = decodeObj
+    }
+
+    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
+    }
+}

@@ -25,9 +25,10 @@
 		E7536C3F20ED7F81006AC702 /* ParticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7536C3E20ED7F81006AC702 /* ParticleView.swift */; };
 		E7536C4120ED7F93006AC702 /* Particle.pde in Resources */ = {isa = PBXBuildFile; fileRef = E7536C4020ED7F93006AC702 /* Particle.pde */; };
 		E7536C4320ED7FA1006AC702 /* Particle.txt in Resources */ = {isa = PBXBuildFile; fileRef = E7536C4220ED7FA1006AC702 /* Particle.txt */; };
-		E7536C4E20EE12B3006AC702 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7536C4D20EE12B3006AC702 /* Starscream.framework */; };
 		E7536C4B20EE0E57006AC702 /* OekakiWebSocketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7536C4820EE0E57006AC702 /* OekakiWebSocketView.swift */; };
 		E7536C4C20EE0E57006AC702 /* OekakiWebSocket.pde in Resources */ = {isa = PBXBuildFile; fileRef = E7536C4920EE0E57006AC702 /* OekakiWebSocket.pde */; };
+		E7536C4E20EE12B3006AC702 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7536C4D20EE12B3006AC702 /* Starscream.framework */; };
+		E7536C4F20EE21D5006AC702 /* OekakiWebSocket.txt in Resources */ = {isa = PBXBuildFile; fileRef = E7536C4720EE0E57006AC702 /* OekakiWebSocket.txt */; };
 		E7828E7420ECA2EE00D614F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7828E7320ECA2EE00D614F5 /* AppDelegate.swift */; };
 		E7828E7B20ECA2F300D614F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7828E7A20ECA2F300D614F5 /* Assets.xcassets */; };
 		E7828E7E20ECA2F300D614F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7828E7C20ECA2F300D614F5 /* LaunchScreen.storyboard */; };
@@ -57,10 +58,10 @@
 		E7536C3E20ED7F81006AC702 /* ParticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleView.swift; sourceTree = "<group>"; };
 		E7536C4020ED7F93006AC702 /* Particle.pde */ = {isa = PBXFileReference; lastKnownFileType = text; path = Particle.pde; sourceTree = "<group>"; };
 		E7536C4220ED7FA1006AC702 /* Particle.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Particle.txt; sourceTree = "<group>"; };
-		E7536C4D20EE12B3006AC702 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
 		E7536C4720EE0E57006AC702 /* OekakiWebSocket.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OekakiWebSocket.txt; sourceTree = "<group>"; };
 		E7536C4820EE0E57006AC702 /* OekakiWebSocketView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OekakiWebSocketView.swift; sourceTree = "<group>"; };
 		E7536C4920EE0E57006AC702 /* OekakiWebSocket.pde */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OekakiWebSocket.pde; sourceTree = "<group>"; };
+		E7536C4D20EE12B3006AC702 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
 		E7828E7020ECA2EE00D614F5 /* OSCProcessingKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSCProcessingKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7828E7320ECA2EE00D614F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7828E7A20ECA2F300D614F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -305,8 +306,8 @@
 				E7536C3920ED76A3006AC702 /* Ripple.pde in Resources */,
 				E7536C4120ED7F93006AC702 /* Particle.pde in Resources */,
 				E7536C3820ED76A3006AC702 /* Ripple.txt in Resources */,
-				E7536C4A20EE0E57006AC702 /* OekakiWebSocket.txt in Resources */,
 				E7536C2620ED6F8E006AC702 /* SimpleTouch.pde in Resources */,
+				E7536C4F20EE21D5006AC702 /* OekakiWebSocket.txt in Resources */,
 				E7536C2420ED6F7A006AC702 /* SimpleTouch.txt in Resources */,
 				E7828E7B20ECA2F300D614F5 /* Assets.xcassets in Resources */,
 			);
