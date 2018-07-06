@@ -1,0 +1,149 @@
+// Breakout - ProcessingKit
+
+import UIKit
+import ProcessingKit
+
+func += (left: inout CGPoint, right: CGPoint) {
+    left = left + right
+}
+
+func + (left: CGPoint, right: CGPoint) -> CGPoint {
+    return CGPoint(x: left.x + right.x, y: left.y + right.y)
+}
+
+extension CGRect {
+    var top: CGFloat {
+        return origin.y
+    }
+    var left: CGFloat {
+        return origin.x
+    }
+    var right: CGFloat {
+        return origin.x + size.width
+    }
+    var bottom: CGFloat {
+        return origin.y + size.height
+    }
+}
+
+struct Ball {
+    let size: CGPoint
+    var center: CGPoint
+    var velocity: CGPoint
+
+    mutating func update(){
+        center += velocity
+    }
+    
+}
+
+extension Ball {
+    var top: CGFloat {
+        return center.y - size.y / 2
+    }
+    var left: CGFloat {
+        return center.x - size.x / 2
+    }
+    var right: CGFloat {
+        return center.x + size.x / 2
+    }
+    var bottom: CGFloat {
+        return center.y + size.y / 2
+    }
+}
+
+struct BlockGenerator {
+    let BLOCK_SIZE = CGPoint(x: 10, y: 5)
+    let BLOCK_HEIGHT = 30
+    func generate(frameWidth: CGFloat) -> [CGRect] {
+        var blocks = [CGRect]()
+        for x in 0..<Int(BLOCK_SIZE.x) {
+            for y in 0..<Int(BLOCK_SIZE.y) {
+                blocks.append(CGRect(x: x * Int(frameWidth / BLOCK_SIZE.y), y: y * BLOCK_HEIGHT, width: Int(frameWidth / BLOCK_SIZE.x), height: BLOCK_HEIGHT))
+            }
+        }
+        return blocks
+    }
+}
+
+struct HitChecker {
+    func check(_ width: CGFloat, _ height: CGFloat, _ ball: inout Ball, _ bar: inout CGRect, _ blocks: inout [CGRect]) {
+        if ball.top >= height {
+            ball = Ball(size: CGPoint(x: 20, y: 20), center: CGPoint(x: width / 2 - 200, y: bar.origin.y - 200) , velocity: CGPoint(x: 4, y: 4))
+        }
+        if ball.left <= 0 || ball.right >= width {
+            ball.velocity.x = -ball.velocity.x
+        }
+        if ball.top <= 0 {
+            ball.velocity.y = -ball.velocity.y
+        }
+
+        if bar.top <= ball.center.y && bar.bottom >= ball.center.y && bar.left <= ball.center.x && bar.right >= ball.center.x {
+            let bar_y1 = ball.center.x * (bar.size.height / bar.size.width) + bar.bottom
+            let bar_y2 = ball.center.x * -(bar.size.height / bar.size.width) + bar.top
+
+            if (ball.center.y <= bar_y1 && ball.center.y <= bar_y2) || (ball.center.y >= bar_y1 && ball.center.y >= bar_y2) {
+                ball.velocity.x = -ball.velocity.x
+            } else {
+                ball.velocity.y = -ball.velocity.y
+                ball.velocity.x = max(-3, min(3, -((bar.left + ball.right) - ball.center.x * 2)))
+            }
+        }
+
+        blocks = blocks.filter { block -> Bool in
+            if block.top <= ball.center.y && block.bottom >= ball.center.y && block.left <= ball.center.x && block.right >= ball.center.x {
+                let y1 = ball.center.x * (block.size.height / block.size.width) + block.bottom
+                let y2 = ball.center.x * -(block.size.height / block.size.width) + block.top
+
+                if((ball.center.y <= y1 && ball.center.y <= y2)){
+                    ball.velocity.x = -ball.velocity.x
+                }else if((ball.center.y >= y1 && ball.center.y >= y2)){
+                    ball.velocity.x = -ball.velocity.x
+                }else if((ball.center.y >= y1 && ball.center.y <= y2)){
+                    ball.velocity.y = -ball.velocity.y
+                }else if((ball.center.y <= y1 && ball.center.y >= y2)){
+                    ball.velocity.y = -ball.velocity.y
+                }
+            }
+            return block.top <= ball.center.y && block.bottom >= ball.center.y && block.left <= ball.center.x && block.right >= ball.center.x
+        }
+    }
+}
+
+class BreakoutView: ProcessingView {
+    var bar = CGRect.zero
+    var ball = Ball(size: .zero, center: .zero, velocity: .zero)
+    let blockGenerator = BlockGenerator()
+    var blocks = [CGRect]()
+    let hitChecker = HitChecker()
+
+    func setup(){
+        bar = CGRect(x: 0, y: height - 50, width: 100, height: 10)
+        ball = Ball(size: CGPoint(x: 20, y: 20), center: CGPoint(x: width / 2 - 200, y: bar.origin.y - 200) , velocity: CGPoint(x: 4, y: 4))
+        blocks = blockGenerator.generate(frameWidth: width)
+    }
+
+    func draw(){
+        background(0, 0, 0)
+
+        fill(255, 255, 255)
+        ball.update()
+        ellipse(ball.center.x, ball.center.y, ball.size.x, ball.size.y)
+
+        if fingerPressed {
+            bar.origin.x = touchX - bar.size.width / 2
+        }
+        rect(bar.origin.x, bar.origin.y, bar.size.width, bar.size.height)
+
+        for block in blocks {
+            rect(block.origin.x, block.origin.y, block.size.width, block.size.height)
+        }
+
+        hitChecker.check(width, height, &ball, &bar, &blocks)
+
+        if blocks.count == 0 {
+            blocks = blockGenerator.generate(frameWidth: width)
+        }
+    }
+}
+

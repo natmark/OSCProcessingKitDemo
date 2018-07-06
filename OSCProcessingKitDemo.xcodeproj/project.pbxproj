@@ -32,6 +32,9 @@
 		E7828E7420ECA2EE00D614F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7828E7320ECA2EE00D614F5 /* AppDelegate.swift */; };
 		E7828E7B20ECA2F300D614F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7828E7A20ECA2F300D614F5 /* Assets.xcassets */; };
 		E7828E7E20ECA2F300D614F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7828E7C20ECA2F300D614F5 /* LaunchScreen.storyboard */; };
+		E79A953320EFC9FA00E9FC83 /* BreakoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A953020EFC9FA00E9FC83 /* BreakoutView.swift */; };
+		E79A953420EFC9FA00E9FC83 /* Breakout.txt in Resources */ = {isa = PBXBuildFile; fileRef = E79A953120EFC9FA00E9FC83 /* Breakout.txt */; };
+		E79A953520EFC9FA00E9FC83 /* Breakout.pde in Resources */ = {isa = PBXBuildFile; fileRef = E79A953220EFC9FA00E9FC83 /* Breakout.pde */; };
 		E7D14AEB20ECB01100906F04 /* SketchesTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D14AEA20ECB01100906F04 /* SketchesTableViewDataSource.swift */; };
 		E7D14AEE20ECB4DF00906F04 /* ColorfulView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D14AED20ECB4DF00906F04 /* ColorfulView.swift */; };
 		E7D14AF220ECB51400906F04 /* ProcessingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D14AF020ECB51400906F04 /* ProcessingKit.framework */; };
@@ -67,6 +70,9 @@
 		E7828E7A20ECA2F300D614F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7828E7D20ECA2F300D614F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7828E7F20ECA2F400D614F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E79A953020EFC9FA00E9FC83 /* BreakoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakoutView.swift; sourceTree = "<group>"; };
+		E79A953120EFC9FA00E9FC83 /* Breakout.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Breakout.txt; sourceTree = "<group>"; };
+		E79A953220EFC9FA00E9FC83 /* Breakout.pde */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Breakout.pde; sourceTree = "<group>"; };
 		E7D14AEA20ECB01100906F04 /* SketchesTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SketchesTableViewDataSource.swift; sourceTree = "<group>"; };
 		E7D14AED20ECB4DF00906F04 /* ColorfulView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulView.swift; sourceTree = "<group>"; };
 		E7D14AF020ECB51400906F04 /* ProcessingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcessingKit.framework; path = Carthage/Build/iOS/ProcessingKit.framework; sourceTree = "<group>"; };
@@ -216,6 +222,16 @@
 			path = OSCProcessingKitDemo;
 			sourceTree = "<group>";
 		};
+		E79A952F20EFC9B900E9FC83 /* Breakout */ = {
+			isa = PBXGroup;
+			children = (
+				E79A953220EFC9FA00E9FC83 /* Breakout.pde */,
+				E79A953120EFC9FA00E9FC83 /* Breakout.txt */,
+				E79A953020EFC9FA00E9FC83 /* BreakoutView.swift */,
+			);
+			path = Breakout;
+			sourceTree = "<group>";
+		};
 		E7D14AEC20ECB43600906F04 /* Sketches */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +239,7 @@
 				E7536C3420ED767B006AC702 /* Ripple */,
 				E7536C2020ED6F48006AC702 /* SimpleTouch */,
 				E7536C1320ED2D7C006AC702 /* Colorful */,
+				E79A952F20EFC9B900E9FC83 /* Breakout */,
 				E7536C4620EE0DFB006AC702 /* OekakiWebsocket */,
 			);
 			path = Sketches;
@@ -298,7 +315,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7536C1520ED2D99006AC702 /* Colorful.pde in Resources */,
+				E79A953420EFC9FA00E9FC83 /* Breakout.txt in Resources */,
 				E7536C4C20EE0E57006AC702 /* OekakiWebSocket.pde in Resources */,
+				E79A953520EFC9FA00E9FC83 /* Breakout.pde in Resources */,
 				E7536C4320ED7FA1006AC702 /* Particle.txt in Resources */,
 				E714CF1320ECAA0600A52652 /* MainViewController.storyboard in Resources */,
 				E7828E7E20ECA2F300D614F5 /* LaunchScreen.storyboard in Resources */,
@@ -340,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E79A953320EFC9FA00E9FC83 /* BreakoutView.swift in Sources */,
 				E7D14AFD20ED1D7800906F04 /* MainNavigationBar.swift in Sources */,
 				E7536C3F20ED7F81006AC702 /* ParticleView.swift in Sources */,
 				E7536C2220ED6F63006AC702 /* SimpleTouchView.swift in Sources */,
